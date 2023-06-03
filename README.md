@@ -19,3 +19,7 @@ yum update ca-certificates
 ```bash
 bash <(curl -sL https://raw.githubusercontent.com/jaluik/v2ray-mask/master/v2ray-mask.sh)
 ```
+
+## 注意事项
+
+- 安装系统为：`centos-7-x86_64-bbr`
