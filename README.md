@@ -11,7 +11,7 @@ yum install -y curl
 ```
 
 ```bash
-yum update ca-certificates
+yum update -y ca-certificates
 ```
 
 2. 执行下载脚本

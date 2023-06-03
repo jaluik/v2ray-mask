@@ -279,7 +279,7 @@ getCert() {
         ~/.acme.sh/acme.sh  --install-cert -d $DOMAIN --ecc \
             --key-file       $KEY_FILE  \
             --fullchain-file $CERT_FILE \
-            --reloadcmd     "service nginx force-reload"
+            --reloadcmd     "systemctl start nginx"
         [[ -f $CERT_FILE && -f $KEY_FILE ]] || {
             colorEcho $RED " 获取证书失败，请到 https://hijk.art 反馈"
             exit 1
@@ -456,7 +456,7 @@ EOF
     startNginx
     systemctl start v2ray
     
-    sleep 3
+    sleep 10
     res=`netstat -nltp | grep ${PORT} | grep nginx`
     if [[ "${res}" = "" ]]; then
         nginx -t
