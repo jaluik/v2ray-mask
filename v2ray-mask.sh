@@ -13,7 +13,7 @@ PLAIN='\033[0m'
 SITES=(
 http://www.anshuge.com/
 http://www.biqu6.com/
-https://www.bequwx.org/
+# https://www.bequwx.org/
 )
 
 CONFIG_FILE="/etc/v2ray/config.json"
