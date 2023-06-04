@@ -402,7 +402,11 @@ EOF
         proxy_pass $PROXY_URL;
         proxy_set_header Accept-Encoding '';
         sub_filter \"$REMOTE_HOST\" \"$DOMAIN\";
-        sub_filter_once off;"
+        sub_filter_once off;
+        proxy_set_header Referer $REMOTE_HOST;
+        proxy_busy_buffers_size   512k;
+        proxy_buffers   4 512k;
+        proxy_buffer_size   256k;"
     fi
     cat > ${NGINX_CONF_PATH}${DOMAIN}.conf<<-EOF
 server {
